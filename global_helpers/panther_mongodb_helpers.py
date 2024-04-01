@@ -1,6 +1,3 @@
-from panther_base_helpers import deep_get
-
-
 def mongodb_alert_context(event) -> dict:
     return {
         "username": event.get("username", "<USER_NOT_FOUND>"),
