@@ -56,7 +56,7 @@ jobs:
           upstream_sync_branch: ${{steps.set_upstream.outputs.latest-release}}
           upstream_sync_repo: panther-labs/panther-analysis
           #test_mode: true
-          upstream_pull_args: "--allow-unrelated-histories"
+          upstream_pull_args: "--unshallow"
       # Create a PR from this branch back to this fork's primary branch
       - uses: actions/github-script@v7
         id: create_pr
