@@ -16,3 +16,5 @@ jobs:
           owner: panther-labs
           base: release
           head: release
+          auto_merge: false
+          merge_method: rebase
