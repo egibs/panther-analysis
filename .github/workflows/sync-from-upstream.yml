@@ -41,6 +41,7 @@ jobs:
         with:
           ref: "sync_upstream_${{steps.set_upstream.outputs.latest-release}}"
           token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false
       # Sync this branch with upstream
       - name: Sync upstream changes into PR branch
         id: sync
@@ -53,10 +54,10 @@ jobs:
           #  NOTE NOTE NOTE NOTE
           # If you want to run this job and sync to upstream's master instead of releases
           #  change the usptream_sync_branch to master
-          upstream_sync_branch: ${{steps.set_upstream.outputs.latest-release}}
+          upstream_sync_branch: release
           upstream_sync_repo: panther-labs/panther-analysis
           #test_mode: true
-          upstream_pull_args: "--unshallow"
+          upstream_pull_args: "--rebase"
       # Create a PR from this branch back to this fork's primary branch
       - uses: actions/github-script@v7
         id: create_pr
