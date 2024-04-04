@@ -51,6 +51,7 @@ jobs:
           target_sync_branch: "sync_upstream_${{steps.set_upstream.outputs.latest-release}}"
           # REQUIRED 'target_repo_token' exactly like this!
           target_repo_token: ${{ secrets.GITHUB_TOKEN }}
+          target_branch_push_args: "--force"
           #  NOTE NOTE NOTE NOTE
           # If you want to run this job and sync to upstream's master instead of releases
           #  change the usptream_sync_branch to master
