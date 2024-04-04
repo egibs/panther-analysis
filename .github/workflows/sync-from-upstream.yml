@@ -44,7 +44,7 @@ jobs:
       # Sync this branch with upstream
       - name: Sync upstream changes into PR branch
         id: sync
-        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4
+        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
         with:
           # target_sync_branch == the branch in your fork that you want to sync to upstream
           target_sync_branch: "sync_upstream_${{steps.set_upstream.outputs.latest-release}}"
